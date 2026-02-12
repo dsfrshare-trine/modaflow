@@ -12,7 +12,7 @@ model User {
   email     String   @unique
   password  String
   name      String
-  role      UserRole @default(CUSTOMER)
+  role      String   @default("CUSTOMER")
   tenantId  String?
   tenant    Tenant?  @relation(fields: [tenantId], references: [id])
   orders    Order[]
@@ -83,7 +83,7 @@ model Order {
   customerEmail String?
   customerPhone String?
   total        Float
-  status       OrderStatus @default(PENDING)
+  status       String      @default("PENDING")
   items        OrderItem[]
   createdAt    DateTime    @default(now())
   updatedAt    DateTime    @updatedAt
@@ -105,18 +105,4 @@ model OrderItem {
 
   @@index([orderId])
   @@index([productId])
-}
-
-enum UserRole {
-  ADMIN
-  LOJISTA
-  CUSTOMER
-}
-
-enum OrderStatus {
-  PENDING
-  PAID
-  SHIPPED
-  DELIVERED
-  CANCELLED
 }
