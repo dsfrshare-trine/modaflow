@@ -1,0 +1,42 @@
+{
+  "name": "modaflow-backend",
+  "version": "1.0.0",
+  "description": "Backend API for ModaFlow - Fashion E-commerce Multi-tenant Platform",
+  "main": "dist/server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "db:push": "prisma db push",
+    "db:studio": "prisma studio",
+    "db:seed": "tsx src/database/seed.ts"
+  },
+  "keywords": ["ecommerce", "fashion", "multi-tenant", "api"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@prisma/client": "^5.22.0",
+    "@google/generative-ai": "^0.21.0",
+    "express": "^4.21.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "zod": "^3.24.1",
+    "helmet": "^8.0.0",
+    "express-rate-limit": "^7.5.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.14.0",
+    "@types/cors": "^2.8.17",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/morgan": "^1.9.9",
+    "prisma": "^5.22.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.8.2"
+  }
+}
